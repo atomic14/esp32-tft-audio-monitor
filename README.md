@@ -2,9 +2,9 @@
 
 This is a port of this [project](https://github.com/atomic14/m5stack-core2-audio-monitor) to work with any ESP32 device with a TFT display.
 
-You can watch a video explainer [here (YouTube)](https://www.youtube.com/watch?v=CwIWpBqa-nM) which goes into a bit more detail on the audio capabilities of the device.
+You can watch a video explainer [here (YouTube)](https://www.youtube.com/watch?v=KaJ4b3HJ3NA) which goes into a bit more detail on the audio capabilities of the device.
 
-[![Demo Video](https://img.youtube.com/vi/CwIWpBqa-nM/0.jpg)](https://www.youtube.com/watch?v=CwIWpBqa-nM)
+[![Demo Video](https://img.youtube.com/vi/KaJ4b3HJ3NA/0.jpg)](https://www.youtube.com/watch?v=KaJ4b3HJ3NA)
 
 You'll need to use PlatformIO to build the project.
 
