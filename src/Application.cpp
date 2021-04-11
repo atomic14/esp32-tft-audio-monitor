@@ -4,6 +4,8 @@
 #include "UI/UI.h"
 #include "AudioProcessing/Processor.h"
 
+#define GPIO_BUTTON 0
+
 // Task to process samples
 void processing_task(void *param)
 {
@@ -26,7 +28,7 @@ Application::Application(TFT_eSPI &display, int window_size)
   m_ui = new UI(display, window_size);
   m_processor = new Processor(window_size);
   m_sampler = new I2SSampler();
-  pinMode(35, INPUT_PULLUP);
+  pinMode(GPIO_BUTTON, INPUT_PULLUP);
 }
 
 void Application::begin(const i2s_config_t &i2s_config, const i2s_pin_config_t &i2s_pins)
@@ -49,7 +51,7 @@ void Application::process_samples()
 
 void Application::loop()
 {
-  if (digitalRead(35) == 0)
+  if (digitalRead(GPIO_BUTTON) == 0)
   {
     m_ui->toggle_display();
     // delay to allow for the touch to finish

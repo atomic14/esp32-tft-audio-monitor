@@ -30,7 +30,7 @@ Application *application;
 void setup()
 {
   Serial.begin(115200);
-  TFT_eSPI *display = new TFT_eSPI(135, 240);
+  TFT_eSPI *display = new TFT_eSPI();
   display->begin();
   display->setRotation(1);
 

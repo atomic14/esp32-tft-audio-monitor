@@ -11,7 +11,7 @@ You'll need to use PlatformIO to build the project.
 To clone the repo use:
 
 ```
-git clone --recursive git@github.com:atomic14/m5stack-core2-audio-monitor.git
+git clone --recursive git@github.com:atomic14/esp32-tft-audio-monitor.git
 ```
 
 This will make sure you get the TFT library as well.
@@ -28,6 +28,8 @@ If you take the lazy option, then remember to remove `-DUSER_SETUP_LOADED=1`.
 
 ```
 ; setup for the TTGO T4
+  -DTFT_WIDTH=135
+  -DTFT_HEIGHT=240
   -DST7789_DRIVER=1
   -DCGRAM_OFFSET=1
   -DTFT_MISO=-1
