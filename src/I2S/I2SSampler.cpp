@@ -3,10 +3,10 @@
 #include "I2SSampler.h"
 #include "driver/i2s.h"
 
-void I2SSampler::addSample(int16_t sample)
+void I2SSampler::addSample(int32_t sample)
 {
     // add the sample to the current audio buffer
-    m_currentAudioBuffer[m_audioBufferPos] = sample;
+    m_currentAudioBuffer[m_audioBufferPos] = sample >> 16;
     m_audioBufferPos++;
     // have we filled the buffer with data?
     if (m_audioBufferPos == m_bufferSizeInSamples)
@@ -35,12 +35,12 @@ void i2sReaderTask(void *param)
                 do
                 {
                     // read data from the I2S peripheral
-                    int16_t i2sData[1024];
+                    int32_t i2sData[1024];
                     // read from i2s
-                    i2s_read(sampler->m_i2sPort, i2sData, 2048, &bytesRead, 10);
-                    for (int i = 0; i < bytesRead / 2; i++)
+                    i2s_read(sampler->m_i2sPort, i2sData, 4096, &bytesRead, 10);
+                    for (int i = 0; i < bytesRead / 4; i++)
                     {
-                        sampler->addSample(i2sData[i]);
+                        sampler->addSample(i2sData[i] & 0xfffffff0);
                     }
                 } while (bytesRead > 0);
             }

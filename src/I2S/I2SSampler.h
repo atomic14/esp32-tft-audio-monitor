@@ -35,7 +35,7 @@ private:
     i2s_pin_config_t m_i2sPins;
 
 protected:
-    void addSample(int16_t sample);
+    void addSample(int32_t sample);
 
 public:
     int16_t getBufferSizeInBytes()
