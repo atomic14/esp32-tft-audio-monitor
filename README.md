@@ -1,3 +1,7 @@
+# If you'd like to buy me a coffee...
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z734F5Y)
+
 # ESP32 Audio Monitor
 
 This is a port of this [project](https://github.com/atomic14/m5stack-core2-audio-monitor) to work with any ESP32 device with a TFT display.
@@ -18,7 +22,11 @@ This will make sure you get the TFT library as well.
 
 Hopefully, the code should be easy to understand.
 
-If you want to add some more visualisations then please open up a pull request and contribute some code.
+# Configuration
+
+All the configuration is located in `config.h` please update this to match the pins you are using for your microphone.
+
+If you want to use the built in ADC instead of a MEMS microphone then comment out line 16 and connect your analog microphone to pin 32. You will need some kind of microphone amplifier board such as the `MAX4466` or `MAX9814` from Adafruit.
 
 To modify the code to work with your particular device you will need to change the settings in `platformio.ini` to match your TFT. The easiest way to do this is to look in the `lib/TFT_eSPI/User_Setups` for your device and copy the required pre-processor defines.
 
@@ -52,6 +60,6 @@ If you take the lazy option, then remember to remove `-DUSER_SETUP_LOADED=1`.
   -DSPI_READ_FREQUENCY=6000000
 ```
 
-And if you'd like to buy me a coffee...
+# Contributing
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z734F5Y)
+If you want to add some more visualisations then please open up a pull request and contribute some code.
