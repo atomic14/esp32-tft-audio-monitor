@@ -11,6 +11,7 @@ class Application
 {
 private:
   int m_window_size;
+  int16_t *m_sample_buffer;
   UI *m_ui;
   Processor *m_processor;
   I2SSampler *m_sampler;
@@ -18,8 +19,8 @@ private:
   void process_samples();
 
 public:
-  Application(TFT_eSPI &display, int window_size);
-  void begin(const i2s_config_t &i2s_config, const i2s_pin_config_t &i2s_pins);
+  Application(TFT_eSPI &display);
+  void begin();
   void loop();
 
   friend void processing_task(void *param);
