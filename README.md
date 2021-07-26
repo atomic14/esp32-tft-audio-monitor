@@ -1,7 +1,3 @@
-# If you'd like to buy me a coffee...
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z734F5Y)
-
 # ESP32 Audio Monitor
 
 This is a port of this [project](https://github.com/atomic14/m5stack-core2-audio-monitor) to work with any ESP32 device with a TFT display.
