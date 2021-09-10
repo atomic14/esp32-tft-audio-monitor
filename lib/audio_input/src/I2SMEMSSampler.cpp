@@ -32,7 +32,7 @@ int I2SMEMSSampler::read(int16_t *samples, int count)
     int samples_read = bytes_read / sizeof(int32_t);
     for (int i = 0; i < samples_read; i++)
     {
-        samples[i] = (raw_samples[i] & 0xFFFFFFF0) >> 11;
+        samples[i] = (raw_samples[i] & 0xFFFFFFF0) >> 14;
     }
     free(raw_samples);
     return samples_read;

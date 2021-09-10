@@ -12,6 +12,7 @@ void setup()
   display->setRotation(1);
 
   application = new Application(*display);
+  application->begin();
 }
 
 void loop()
