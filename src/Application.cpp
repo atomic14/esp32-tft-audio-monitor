@@ -15,6 +15,7 @@ void processing_task(void *param)
   while (true)
   {
     application->process_samples();
+    vTaskDelay(1);
   }
 }
 
@@ -34,12 +35,12 @@ Application::Application(TFT_eSPI &display)
 
 void Application::begin()
 {
+  // start sampling from i2s device
+  m_sampler->start();
   // set up the processing
   TaskHandle_t processing_task_handle;
   xTaskCreatePinnedToCore(processing_task, "Processing Task", 4096, this, 2, &processing_task_handle, 0);
 
-  // start sampling from i2s device
-  m_sampler->start();
 }
 
 void Application::process_samples()
